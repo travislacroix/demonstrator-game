@@ -22,18 +22,3 @@ def normalize(vec):
 def matNormalize(mat):
     row_sums = mat.sum(axis=1)
     return mat / row_sums[:, np.newaxis]
-
-
-def swap(xs, a, b):
-    xs[a], xs[b] = xs[b], xs[a]
-
-
-# A Derangement is a permutation with no fixed points
-# http://en.wikipedia.org/wiki/Derangement
-# http://stackoverflow.com/questions/25200220/generate-a-random-derangement-of-a-list
-
-def derange(xs):
-    for a in xrange(1, len(xs)):
-        b = random.choice(xrange(0, a))
-        swap(xs, a, b)
-    return xs
